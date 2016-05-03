@@ -22,10 +22,10 @@ powerCons$Time <- strptime(powerCons$Time, format = "%d/%m/%Y %H:%M:%S")
 
 powerCons$Date <- strptime(powerCons$Date, format = "%d/%m/%Y")
 
-hist(powerCons$Global_active_power)
+windows()
 
-plot(powerCons$Time, powerCons$Global_active_power)
+with(powerCons, plot(Time, Global_active_power, type = "n"))
 
-
+lines(powerCons$Time, powerCons$Global_active_power)
 
 
