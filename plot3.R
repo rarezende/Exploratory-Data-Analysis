@@ -24,8 +24,16 @@ powerCons$Date <- strptime(powerCons$Date, format = "%d/%m/%Y")
 
 windows()
 
-with(powerCons, plot(Time, Global_active_power, type = "n"))
+with(powerCons, plot(Time, Sub_metering_1, type = "n"))
 
-lines(powerCons$Time, powerCons$Global_active_power)
+with(powerCons, lines(Time, Sub_metering_1, col="black"))
+
+with(powerCons, lines(Time, Sub_metering_2, col="red"))
+
+with(powerCons, lines(Time, Sub_metering_3, col="blue"))
+
+legend("topright", lty = 1, col= c("black", "red", "blue"), 
+       legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+
 
 
